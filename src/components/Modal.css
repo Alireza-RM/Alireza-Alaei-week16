@@ -1,0 +1,63 @@
+.modal {
+  /* background-color: rgb(67, 66, 66); */
+  /* opacity: 0.7; */
+  /* filter: blur(64px); */
+  /* width: 100vh; */
+  /* height: 100vh; */
+  /* position: fixed; */
+  /* z-index: 20; */
+  /* top: 0; */
+  /* left: 0; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+.modalBackground {
+  background-color: rgb(67, 66, 66);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+}
+.modalCenter {
+  background-color: #d3d3d3;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 1000px;
+  min-height: 300px;
+  padding: 40px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  z-index: 30;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 85px;
+}
+
+.button {
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: rgb(54, 53, 53);
+}
+.delete {
+  background-color: rgb(230, 90, 90);
+}
+.cancel {
+  background-color: gray;
+}
+
+.aa {
+  text-align: center;
+}
