@@ -1,12 +1,42 @@
-# React + Vite
+# Contact List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+اپلیکیشنی برای مدیریت مخاطبین با قابلیت های جستجو , ویرایش , حذف و افزودن مخاطب
 
-Currently, two official plugins are available:
+## نصب و راه‌اندازی
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. این ریپو را کلون کنید:
 
-## Expanding the ESLint configuration
+```bash
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+git clone https://github.com/Alireza-RM/Alireza-Alaei-week17.git
+
+```
+
+2. پکیج‌ها را نصب کنید:
+
+```bash
+npm install
+
+```
+
+3. برنامه را اجرا کنید :
+
+```bash
+npm run dev
+
+```
+
+### 4️⃣ ویژگی‌ها (Features)
+
+- اضافه کردن مخاطب جدید با اعتبارسنجی
+- جستجوی زنده بر اساس نام، نام خانوادگی
+- ویرایش و حذف مخاطبین
+- حذف گروهی چند مخاطب
+- استفاده از معماری Flux (ترکیب Context Api و useReducer) برای مدیریت وضعیت داده ها
+- اعتبارسنجی فرم‌ها با استفاده از yup و react-hook-form
+- طراحی فرم‌های قابل استفاده مجدد
+- استفاده از json-server برای داشتن back-end ای شبیه سازی شده و همچنین استفاده از API برای ارتباط با آن
+
+#### چرا این بخش مهمه ؟
+
+این پروژه نشان‌دهنده‌ی توانایی من در ساخت اپلیکیشن‌های مقیاس‌پذیر با React است. استفاده از معماری Flux، فرم‌های پیشرفته، و طراحی ماژولار باعث شده تا این پروژه به عنوان یک نمونه‌ی قابل ارائه در پرتفولیو من قرار گیرد.

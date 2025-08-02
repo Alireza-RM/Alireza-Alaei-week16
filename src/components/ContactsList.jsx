@@ -4,7 +4,7 @@ import styles from "./Contacts.module.css"
 
 import Contact from "./Contact";
 
-function ContactsList({ contactData, isDeleteGroup, setIsModalDelete, setDeletesId, setIsEditContact, setFormContact }) {
+function ContactsList({ contactData, isDeleteGroup, setIsModalDelete, setDeletesId, setIsEditContact }) {
 
 
 
@@ -24,7 +24,7 @@ function ContactsList({ contactData, isDeleteGroup, setIsModalDelete, setDeletes
 
                                         <Contact key={data.id} styles={styles} isDeleteGroup={isDeleteGroup}
                                             setIsModalDelete={setIsModalDelete} setDeletesId={setDeletesId}
-                                            setIsEditContact={setIsEditContact} setFormContact={setFormContact} data={data}
+                                            setIsEditContact={setIsEditContact} data={data}
                                         />
                                     )
                                 }

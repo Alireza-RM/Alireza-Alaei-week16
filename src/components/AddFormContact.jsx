@@ -1,94 +1,31 @@
-import { useState } from "react"
-import validationForm from "../utility/validationForm"
 
+
+import { useFormData } from "../context/FormContext"
+
+import inputDetail from "../constants/inputFormData"
 
 import "./AddFormContact.css"
+import InputForm from "./InputForm"
 
-function AddFormContact({ formContact, formContactHandler, addContactHandler }) {
+function AddFormContact({ addContactHandler }) {
 
-    const [formFocoused, setFormFocoused] = useState({
-        name: false,
-        email: false,
-        job: false,
-        phone: false
-    })
-
-    const focousedHandler = (e) => {
-        const name = e.target.name
-        setFormFocoused(prev => ({ ...prev, [name]: true }))
-    }
-
-
-    const newError = validationForm(formContact)
-
-
-
+    const { register, handleSubmit, errors, } = useFormData()
 
     return (
-        <form onSubmit={(e) => addContactHandler(e, newError)}>
+        <form onSubmit={handleSubmit(addContactHandler)} >
             <div>
-
-                <div className="rowDetail">
-                    <div>
-                        <p>نام و نام خوانوادگی :</p>
-                        <input type="text" name="name" value={formContact.name} onChange={(e) => formContactHandler(e)}
-
-                            onFocus={(e) => focousedHandler(e)}
-                        />
-                    </div>
-                    {
-                        newError.name && formFocoused.name &&
-                        <p style={{ fontSize: "15px", color: "red" }}>{newError.name}</p>
-                    }
-                </div>
-
-
-
-                <div className="rowDetail">
-                    <div>
-                        <p>ایمیل :</p>
-                        <input type="text" name="email" value={formContact.email} onChange={(e) => formContactHandler(e)}
-                            onFocus={(e) => focousedHandler(e)} />
-                    </div>
-                    {
-                        newError.email && formFocoused.email &&
-                        <p style={{ fontSize: "15px", color: "red" }}>{newError.email}</p>
-                    }
-                </div>
-
-
-
-                <div className="rowDetail">
-                    <div>
-                        <p>شغل :</p>
-                        <input type="text" name="job" value={formContact.job} onChange={(e) => formContactHandler(e)}
-                            onFocus={(e) => focousedHandler(e)} />
-                    </div>
-                    {
-                        newError.job && formFocoused.job &&
-                        <p style={{ fontSize: "15px", color: "red" }}>{newError.job}</p>
-                    }
-                </div>
-
-
-
-                <div className="rowDetail">
-                    <div>
-                        <p>تلفن همراه :</p>
-                        <input type="text" name="phone" value={formContact.phone} onChange={(e) => formContactHandler(e)}
-                            onFocus={(e) => focousedHandler(e)} />
-                    </div>
-                    {
-                        newError.phone && formFocoused.phone &&
-                        <p style={{ fontSize: "15px", color: "red" }}>{newError.phone}</p>
-                    }
-                </div>
+                {
+                    inputDetail.map((i) => (
+                        <InputForm key={i.name} register={register} errors={errors} {...i} />
+                    ))
+                }
             </div>
 
             <div className="divButton">
                 <button className="addButton" type="submit">افزودن</button>
             </div>
-        </form>
+
+        </ form>
     )
 }
 

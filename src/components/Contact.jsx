@@ -1,9 +1,13 @@
 import { useState } from "react"
 import { BsThreeDots } from "react-icons/bs"
+import { useFormData } from "../context/FormContext"
 
-function Contact({ data, styles, isDeleteGroup, setIsModalDelete, setDeletesId, setIsEditContact, setFormContact }) {
+function Contact({ data, styles, isDeleteGroup, setIsModalDelete, setDeletesId, setIsEditContact }) {
 
-    const { name, email, id } = data
+    const { reset } = useFormData()
+
+
+    const { name, email, id, phone, job } = data
 
     const [isMore, setIsMore] = useState(true)
 
@@ -19,7 +23,7 @@ function Contact({ data, styles, isDeleteGroup, setIsModalDelete, setDeletesId, 
 
 
     const editHandler = () => {
-        setFormContact(data)
+        reset({ name, email, id, phone, job })
         setIsEditContact(p => !p)
     }
 

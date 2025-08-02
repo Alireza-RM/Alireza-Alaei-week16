@@ -6,7 +6,7 @@ import { FaPlus } from "react-icons/fa6";
 
 import styles from "./Header.module.css"
 
-function Header({ search, setSearch, contactData, setIsAddContact, isDeleteGroup, setIsDeleteGroup, deleteContactHandler, setDeletesId }) {
+function Header({ search, setSearch, contactData, setIsAddContact, isDeleteGroup, setIsDeleteGroup, setIsModalDelete, deletesId, setDeletesId }) {
 
 
 
@@ -19,15 +19,16 @@ function Header({ search, setSearch, contactData, setIsAddContact, isDeleteGroup
             <div className={styles.icons}>
                 {!isDeleteGroup ?
 
-                    <div className={styles.icon} style={{ display: `${!contactData.data.length ? "none" : ""}` }} onClick={() => setIsDeleteGroup(prev => !prev)}>
+                    <div className={styles.icon} style={{ display: `${!contactData.data.length ? "none" : ""}` }}
+                        onClick={() => setIsDeleteGroup(prev => !prev)}>
                         <IoCheckmarkDoneSharp />
                     </div>
                     :
                     <>
-                        <span className={styles.icon}
+                        <span className={styles.icon} style={{ cursor: !deletesId.length ? "no-drop" : null }}
                             onClick={() => {
-                                deleteContactHandler()
-                                setIsDeleteGroup(prev => !prev)
+                                if (!deletesId.length) return
+                                setIsModalDelete(prev => !prev)
                             }
                             }>
                             <IoPersonRemove />
@@ -41,7 +42,6 @@ function Header({ search, setSearch, contactData, setIsAddContact, isDeleteGroup
                         </span>
                     </>
                 }
-
 
                 <div className={styles.icon} onClick={() => setIsAddContact(prev => !prev)} >
                     <FaPlus />

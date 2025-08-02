@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 
-const toastComponenet = (type, color, text) => {
+const toastComponent = (type, color, text) => {
   const style = {
     position: "top-left",
     style: {
@@ -16,4 +16,4 @@ const toastComponenet = (type, color, text) => {
   return toast[type](text, style);
 };
 
-export default toastComponenet;
+export default toastComponent;
